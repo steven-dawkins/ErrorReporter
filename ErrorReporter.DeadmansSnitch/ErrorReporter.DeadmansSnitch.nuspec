@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>steven.dawkins@gmail.com</authors>
+    <owners>steven.dawkins@gmail.com</owners>
+    
+    <projectUrl>https://github.com/steven-dawkins/ErrorReporter</projectUrl>
+	
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Deadmanssnitch reporter for ErrorReporter</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags></tags>
+  </metadata>
+</package>

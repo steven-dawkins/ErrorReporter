@@ -52,6 +52,7 @@
     <Compile Include="SentryErrorReporter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ErrorReporter.Sentry.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

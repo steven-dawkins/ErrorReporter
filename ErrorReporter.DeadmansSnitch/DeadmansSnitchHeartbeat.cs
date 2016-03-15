@@ -28,7 +28,8 @@ namespace ErrorReporter.DeadmansSnitch
             {
                 using (var client = new HttpClient())
                 {
-                    var responseString = client.GetStringAsync(url).Result;
+                    var message = string.Format("Machine: {0}", Environment.MachineName);
+                    var responseString = client.GetStringAsync(url+"?m=" + message).Result;
                 }
             }
             catch (Exception e)
