@@ -9,9 +9,24 @@ namespace ErrorReporter.Sentry
     {
         private readonly RavenClient ravenClient;
 
-        public SentryErrorReporter(string dsn)
+        public static IErrorReporter Connect(string dsn, string release)
+        {
+            if (string.IsNullOrWhiteSpace(dsn))
+            {
+                return new NopErrorReporter();
+            }
+
+            return new SentryErrorReporter(dsn, release);
+        }
+
+        public SentryErrorReporter(string dsn, string release)
         {
             this.ravenClient = new RavenClient(dsn);
+
+            if (!string.IsNullOrWhiteSpace(release))
+            {
+                this.ravenClient.Release = release;
+            }
         }
 
         public void Capture(Exception e)

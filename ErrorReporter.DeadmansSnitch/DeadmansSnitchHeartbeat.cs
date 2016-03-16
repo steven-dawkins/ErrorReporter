@@ -12,6 +12,16 @@ namespace ErrorReporter.DeadmansSnitch
         private readonly Subject<bool> beatSubject;
         private readonly IErrorReporter errorReporter;
 
+        public static IHeartbeat Connect(string url, IErrorReporter errorReporter)
+        {
+            if (string.IsNullOrWhiteSpace(url))
+            {
+                return new NopHeartbeat();
+            }
+
+            return new DeadmansSnitchHeartbeat(url, errorReporter);
+        }
+
         public DeadmansSnitchHeartbeat(string url, IErrorReporter errorReporter)
         {
             this.url = url;
