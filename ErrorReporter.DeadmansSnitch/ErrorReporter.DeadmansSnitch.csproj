@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ErrorReporter.Core, Version=1.0.5919.22837, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ErrorReporter.Core.1.0.5919.22837\lib\net45\ErrorReporter.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -63,12 +67,6 @@
   <ItemGroup>
     <None Include="ErrorReporter.DeadmansSnitch.nuspec" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ErrorReporter.Core\ErrorReporter.Core.csproj">
-      <Project>{6d6586b4-11c9-4b77-8645-d9f3b136e099}</Project>
-      <Name>ErrorReporter.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
