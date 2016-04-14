@@ -31,7 +31,11 @@ namespace ErrorReporter.Sentry
 
         public void Capture(Exception e)
         {
-            this.ravenClient.Capture(new SentryEvent(e));
+            var r = new SentryEvent(e);
+
+            r.Message = e.Message;
+
+            this.ravenClient.Capture(r);
         }
 
         public void Capture(string message, Level level)
