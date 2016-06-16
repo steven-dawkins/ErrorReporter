@@ -1,23 +1,14 @@
-﻿using ErrorReporter.Core;
+﻿using System;
+using ErrorReporter.Core;
 using SharpRaven;
 using SharpRaven.Data;
-using System;
+
 
 namespace ErrorReporter.Sentry
 {
     public class SentryErrorReporter : IErrorReporter
     {
         private readonly RavenClient ravenClient;
-
-        public static IErrorReporter Connect(string dsn, string release)
-        {
-            if (string.IsNullOrWhiteSpace(dsn))
-            {
-                return new NopErrorReporter();
-            }
-
-            return new SentryErrorReporter(dsn, release);
-        }
 
         public SentryErrorReporter(string dsn, string release)
         {
@@ -28,6 +19,16 @@ namespace ErrorReporter.Sentry
                 this.ravenClient.Release = release;
             }
         }
+
+        public static IErrorReporter Connect(string dsn, string release)
+        {
+            if (string.IsNullOrWhiteSpace(dsn))
+            {
+                return new NopErrorReporter();
+            }
+
+            return new SentryErrorReporter(dsn, release);
+        }        
 
         public void Capture(Exception e)
         {
