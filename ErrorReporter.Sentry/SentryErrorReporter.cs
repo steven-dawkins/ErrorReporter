@@ -41,20 +41,19 @@ namespace ErrorReporter.Sentry
 
         public void Capture(string message, Level level)
         {
-            var r = new SentryEvent(new SentryMessage(message));
+            var l = GetLevel(level);
+
+            this.ravenClient.CaptureMessage(new SentryMessage(message), l);
+        }
+
+        private static ErrorLevel GetLevel(Level level)
+        {            
             switch (level)
             {
-                case Level.Error:
-                    r.Level = ErrorLevel.Error;
-                    break;
-                case Level.Info:
-                    r.Level = ErrorLevel.Info;
-                    break;
-                default:
-                    throw new Exception("Unexpected reporting level in SentryErrorReporter.Capture : " + level);
+                case Level.Error: return ErrorLevel.Error;                    
+                case Level.Info: return ErrorLevel.Info;                    
+                default: throw new Exception("Unexpected reporting level in SentryErrorReporter.Capture : " + level);
             }
-
-            this.ravenClient.Capture(r);
         }
     }
 }
