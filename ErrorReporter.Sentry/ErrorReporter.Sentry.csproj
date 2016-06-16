@@ -31,16 +31,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ErrorReporter.Core, Version=1.0.5919.22837, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ErrorReporter.Core.1.0.5919.22837\lib\net45\ErrorReporter.Core.dll</HintPath>
+    <Reference Include="ErrorReporter.Core, Version=1.0.5948.20354, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ErrorReporter.Core.1.0.5948.20354\lib\net45\ErrorReporter.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SharpRaven, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpRaven.2.0.0\lib\net45\SharpRaven.dll</HintPath>
+    <Reference Include="SharpRaven, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpRaven.2.1.0\lib\net45\SharpRaven.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -58,7 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ErrorReporter.Sentry.nuspec" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
