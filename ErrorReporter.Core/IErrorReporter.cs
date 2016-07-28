@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ErrorReporter.Core
 {
@@ -9,5 +10,9 @@ namespace ErrorReporter.Core
         void Capture(Exception e);
 
         void Capture(string message, Level level);
+
+        void Capture(Exception e, IEnumerable<KeyValuePair<String, object>> extraInformation);
+
+        void Capture(string message, Level level, IEnumerable<KeyValuePair<String, object>> extraInformation);
     }
 }

@@ -31,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ErrorReporter.Core, Version=1.0.5948.20354, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ErrorReporter.Core.1.0.5948.20354\lib\net45\ErrorReporter.Core.dll</HintPath>
+    <Reference Include="ErrorReporter.Core, Version=1.0.6033.26086, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ErrorReporter.Core.1.0.6033.26086\lib\net45\ErrorReporter.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
