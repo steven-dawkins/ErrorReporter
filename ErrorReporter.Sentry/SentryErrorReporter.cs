@@ -46,6 +46,7 @@ namespace ErrorReporter.Sentry
 
         public void Capture(string message, Level level, IEnumerable<KeyValuePair<String, object>> extraInformation)
         {
+            extraInformation = extraInformation ?? new KeyValuePair<string, object>[] { };
             var l = GetLevel(level);
 
             var m = new SentryMessage(message);
