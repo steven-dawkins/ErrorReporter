@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="IErrorReporter.cs" />
     <Compile Include="IHeartbeat.cs" />
+    <Compile Include="ConsoleErrorReporter.cs" />
     <Compile Include="NopErrorReporter.cs" />
     <Compile Include="NopHeartbeat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
