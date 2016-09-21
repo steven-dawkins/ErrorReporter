@@ -12,7 +12,7 @@ namespace ErrorReporter.Sentry
         private readonly RavenClient ravenClient;
         private readonly IEnumerable<KeyValuePair<string, object>> extraInformation;
 
-        public SentryErrorReporter(string dsn, string release, IEnumerable<KeyValuePair<String, object>> extraInformation)
+        public SentryErrorReporter(string dsn, string release, IEnumerable<KeyValuePair<String, object>> extraInformation = null)
         {
             this.extraInformation = extraInformation ?? new KeyValuePair<string, object>[] { };
             this.ravenClient = new RavenClient(dsn);

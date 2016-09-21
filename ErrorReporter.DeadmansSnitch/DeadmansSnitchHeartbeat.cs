@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using ErrorReporter.Core;
+using System.Threading.Tasks;
 
 namespace ErrorReporter.DeadmansSnitch
 {
@@ -50,7 +51,7 @@ namespace ErrorReporter.DeadmansSnitch
 
         public void Beat()
         {
-            this.beatSubject.OnNext(true);
+            Task.Run(() => this.beatSubject.OnNext(true));
         }
     }
 }
