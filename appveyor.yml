@@ -1,6 +1,12 @@
 version: 1.0.{build}
+environment: 
+  pfx_password: 
+    secure: utd0GjRa0oZl52ooFprYZQ==
 before_build:
 - cmd: nuget restore
+- echo %pfx_password% | sn -i ErrorReporter.Core/ErrorReporter.Core.pfx VS_KEY_4FB70A953FB6861F
+- echo %pfx_password% | sn -i ErrorReporter.Sentry/ErrorReporter.Sentry.pfx VS_KEY_D7625584594EBC66
+- echo %pfx_password% | sn -i ErrorReporter.DeadmansSnitch/ErrorReporter.DeadmansSnitch.pfx VS_KEY_C332E45174EF1C3A
 build:
   publish_nuget: true
   verbosity: minimal
@@ -8,6 +14,3 @@ deploy:
 - provider: NuGet
   api_key:
     secure: Z1DoV4FAaop88LOqNhOuUf+SUrJtH2toXU5Kx++tXpJLAYWluu4ppfdbF+SUT+7+
-environment: 
-  pfx_password: 
-    secure: utd0GjRa0oZl52ooFprYZQ==
