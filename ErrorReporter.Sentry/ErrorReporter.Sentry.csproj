@@ -30,6 +30,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ErrorReporter.Core.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ErrorReporter.Core, Version=1.0.6053.18302, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ErrorReporter.Core.1.0.6053.18302\lib\net45\ErrorReporter.Core.dll</HintPath>
@@ -57,6 +63,7 @@
     <Compile Include="SentryErrorReporter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ErrorReporter.Core.pfx" />
     <None Include="ErrorReporter.Sentry.nuspec" />
     <None Include="packages.config">
       <SubType>Designer</SubType>

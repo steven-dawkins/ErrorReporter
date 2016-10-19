@@ -30,6 +30,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ErrorReporter.DeadmansSnitch.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ErrorReporter.Core, Version=1.0.6033.26086, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ErrorReporter.Core.1.0.6033.26086\lib\net45\ErrorReporter.Core.dll</HintPath>
@@ -71,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ErrorReporter.DeadmansSnitch.nuspec" />
+    <None Include="ErrorReporter.DeadmansSnitch.pfx" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
