@@ -19,7 +19,8 @@ namespace ErrorReporter.DeadmansSnitch
             this.errorReporter = errorReporter;
             this.beatSubject = new Subject<bool>();
             this.beatSubject
-                .Sample(TimeSpan.FromMinutes(1))
+                .Window(()=> Observable.Interval(TimeSpan.FromMinutes(1)))
+                .SelectMany(x => x.Take(1))
                 .Subscribe(evt => this.OnThrottledBeat(evt));
         }
 
