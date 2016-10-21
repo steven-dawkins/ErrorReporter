@@ -2,11 +2,19 @@ version: 1.0.{build}
 environment: 
   pfx_password: 
     secure: utd0GjRa0oZl52ooFprYZQ==
+  snk_password: 
+    secure: dut1MSCvW/OF6CkOugqpZNH0WAhVFPj6CN6xBRx5BmE=
+install:
+  - nuget install secure-file -ExcludeVersion
+  - secure-file\tools\secure-file -decrypt ErrorReporter.Core/ErrorReporter.Core.snk.enc -secret %snk_password%    
+  - secure-file\tools\secure-file -decrypt ErrorReporter.Sentry/ErrorReporter.Sentry.snk.enc -secret %snk_password%    
+  - secure-file\tools\secure-file -decrypt ErrorReporter.DeadmansSnitch/ErrorReporter.DeadmansSnitch.snk.enc -secret %snk_password%    
 before_build:
 - cmd: nuget restore
 #- echo %pfx_password% | "C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\sn" -i ErrorReporter.Core/ErrorReporter.Core.pfx VS_KEY_4FB70A953FB6861F
 #- echo %pfx_password% | "C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\sn" -i ErrorReporter.Sentry/ErrorReporter.Sentry.pfx VS_KEY_D7625584594EBC66
 #- echo %pfx_password% | "C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\sn" -i ErrorReporter.DeadmansSnitch/ErrorReporter.DeadmansSnitch.pfx VS_KEY_C332E45174EF1C3A
+- ps: 
 build:
   publish_nuget: true
   verbosity: minimal

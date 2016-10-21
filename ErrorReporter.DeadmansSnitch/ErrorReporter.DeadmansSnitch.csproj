@@ -31,10 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>ErrorReporter.DeadmansSnitch.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>ErrorReporter.DeadmansSnitch.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ErrorReporter.Core, Version=1.0.6033.26086, Culture=neutral, processorArchitecture=MSIL">
@@ -78,6 +78,7 @@
   <ItemGroup>
     <None Include="ErrorReporter.DeadmansSnitch.nuspec" />
     <None Include="ErrorReporter.DeadmansSnitch.pfx" />
+    <None Include="ErrorReporter.DeadmansSnitch.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

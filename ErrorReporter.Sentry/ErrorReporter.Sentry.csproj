@@ -31,10 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>ErrorReporter.Core.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>ErrorReporter.Sentry.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ErrorReporter.Core, Version=1.0.6053.18302, Culture=neutral, processorArchitecture=MSIL">
@@ -65,6 +65,7 @@
   <ItemGroup>
     <None Include="ErrorReporter.Core.pfx" />
     <None Include="ErrorReporter.Sentry.nuspec" />
+    <None Include="ErrorReporter.Sentry.snk" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
