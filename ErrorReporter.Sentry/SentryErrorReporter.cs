@@ -12,7 +12,7 @@ namespace ErrorReporter.Sentry
         private readonly RavenClient ravenClient;
         private readonly IEnumerable<KeyValuePair<string, object>> extraInformation;
 
-        public SentryErrorReporter(string dsn, string release, IEnumerable<KeyValuePair<String, object>> extraInformation = null)
+        public SentryErrorReporter(string dsn, string release = null, IEnumerable<KeyValuePair<String, object>> extraInformation = null)
         {
             this.extraInformation = extraInformation ?? new KeyValuePair<string, object>[] { };
             this.ravenClient = new RavenClient(dsn);
@@ -20,6 +20,10 @@ namespace ErrorReporter.Sentry
             if (!string.IsNullOrWhiteSpace(release))
             {
                 this.ravenClient.Release = release;
+            }
+            else
+            {
+                this.ravenClient.Release = System.Reflection.Assembly.GetCallingAssembly().GetName().Version.ToString();
             }
         }
 
