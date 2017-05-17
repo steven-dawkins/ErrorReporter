@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompositeErrorReporter.cs" />
+    <Compile Include="ErrorReporterExtensions.cs" />
     <Compile Include="IErrorReporter.cs" />
     <Compile Include="IHeartbeat.cs" />
     <Compile Include="ConsoleErrorReporter.cs" />
