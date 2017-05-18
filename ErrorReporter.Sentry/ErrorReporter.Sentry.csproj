@@ -37,8 +37,8 @@
     <AssemblyOriginatorKeyFile>ErrorReporter.Sentry.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ErrorReporter.Core, Version=1.0.6141.20813, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ErrorReporter.Core.1.0.6141.20813\lib\net45\ErrorReporter.Core.dll</HintPath>
+    <Reference Include="ErrorReporter.Core, Version=1.0.6346.20054, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ErrorReporter.Core.1.0.6346.20054\lib\net45\ErrorReporter.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

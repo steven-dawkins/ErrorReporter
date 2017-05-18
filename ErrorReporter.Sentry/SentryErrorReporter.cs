@@ -68,15 +68,6 @@ namespace ErrorReporter.Sentry
                 default: throw new Exception("Unexpected reporting level in SentryErrorReporter.Capture : " + level);
             }
         }
-
-        public void Capture(Exception e)
-        {
-            this.Capture(e, null);
-        }
-
-        public void Capture(string message, Level level)
-        {
-            this.Capture(message, level, null);
-        }
+        
     }
 }
