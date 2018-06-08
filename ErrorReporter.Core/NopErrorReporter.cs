@@ -12,10 +12,6 @@ namespace ErrorReporter.Core
         {            
         }
 
-        public void Capture(string message, Level level)
-        {            
-        }
-
         public void Capture(Exception e, IEnumerable<KeyValuePair<string, object>> extraInformation)
         {            
         }

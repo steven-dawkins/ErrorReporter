@@ -20,28 +20,11 @@ namespace ErrorReporter.Core
             this.errorReporters = errorReporters;
         }
 
-
-        public void Capture(Exception e)
-        {
-            foreach(var reporter in this.errorReporters)
-            {
-                reporter.Capture(e);
-            }
-        }
-
         public void Capture(Exception e, IEnumerable<KeyValuePair<string, object>> extraInformation)
         {
             foreach (var reporter in this.errorReporters)
             {
                 reporter.Capture(e, extraInformation);
-            }
-        }
-
-        public void Capture(string message, Level level)
-        {
-            foreach (var reporter in this.errorReporters)
-            {
-                reporter.Capture(message, level);
             }
         }
 

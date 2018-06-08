@@ -8,16 +8,6 @@ namespace ErrorReporter.Core
 {
     public class ConsoleErrorReporter : IErrorReporter
     {
-        public void Capture(Exception e)
-        {
-            this.Capture(e, new KeyValuePair<string, object>[] { });
-        }
-
-        public void Capture(string message, Level level)
-        {
-            this.Capture(message, level, new KeyValuePair<string, object>[] { });
-        }
-
         public void Capture(Exception e, IEnumerable<KeyValuePair<string, object>> extraInformation)
         {
             this.Capture(e.Message, Level.Error, extraInformation);

@@ -65,19 +65,10 @@ namespace ErrorReporter.Sentry
             {
                 case Level.Error: return ErrorLevel.Error;                    
                 case Level.Info: return ErrorLevel.Info;
-                case Level.Debug: return ErrorLevel.Debug;             
+                //case Level.Debug: return ErrorLevel.Debug;             
                 default: throw new Exception("Unexpected reporting level in SentryErrorReporter.Capture : " + level);
             }
         }
-
-        public void Capture(Exception e)
-        {
-            this.Capture(e, null);
-        }
-
-        public void Capture(string message, Level level)
-        {
-            this.Capture(message, level, null);
-        }
+        
     }
 }
