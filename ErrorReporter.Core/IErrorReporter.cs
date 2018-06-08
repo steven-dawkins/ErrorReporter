@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ErrorReporter.Core
 {
-    public enum Level { Error, Info }
+    public enum Level { Error, Info, Debug }
 
     public interface IErrorReporter
     {
