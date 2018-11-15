@@ -15,7 +15,7 @@ namespace ErrorReporter.Core
         
         public void Capture(string message, Level level, IEnumerable<KeyValuePair<string, object>> extraInformation)
         {
-            Console.WriteLine($"{level} {message} {string.Join(",", extraInformation.Select(kv => $"{kv.Key}={kv.Value}"))}");
+            System.Diagnostics.Debug.WriteLine($"{level} {message} {string.Join(",", extraInformation.Select(kv => $"{kv.Key}={kv.Value}"))}");
         }
     }
 }
