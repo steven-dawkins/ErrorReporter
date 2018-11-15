@@ -16,6 +16,9 @@ before_build:
 #- echo %pfx_password% | "C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\sn" -i ErrorReporter.Sentry/ErrorReporter.Sentry.pfx VS_KEY_D7625584594EBC66
 #- echo %pfx_password% | "C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\sn" -i ErrorReporter.DeadmansSnitch/ErrorReporter.DeadmansSnitch.pfx VS_KEY_C332E45174EF1C3A
 - ps: 
+
+build_script:
+  - ps: .\Build.ps1
 build:
   publish_nuget: true
   verbosity: minimal
