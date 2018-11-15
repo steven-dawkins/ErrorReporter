@@ -1,4 +1,5 @@
 version: 1.0.{build}
+image: Visual Studio 2017
 environment: 
   pfx_password: 
     secure: utd0GjRa0oZl52ooFprYZQ==
