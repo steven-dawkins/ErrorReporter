@@ -37,5 +37,5 @@ deploy:
   api_key:
     secure: Z1DoV4FAaop88LOqNhOuUf+SUrJtH2toXU5Kx++tXpJLAYWluu4ppfdbF+SUT+7+
 
-before_package:
-  - ps: .\ci-scripts\set-package-version-using-branch.ps1 -nuspec ErrorReporter.Core\ErrorReporter.Core.nuspec -baseVersion $env:appveyor_build_version -branchName $env:appveyor_repo_branch -releaseBranchName release
+#before_package:
+#  - ps: .\ci-scripts\set-package-version-using-branch.ps1 -nuspec ErrorReporter.Core\ErrorReporter.Core.nuspec -baseVersion $env:appveyor_build_version -branchName $env:appveyor_repo_branch -releaseBranchName release
