@@ -6,6 +6,8 @@ environment:
     secure: utd0GjRa0oZl52ooFprYZQ==
   snk_password: 
     secure: dut1MSCvW/OF6CkOugqpZNH0WAhVFPj6CN6xBRx5BmE=
+init:
+  - ps: 'Update-AppveyorBuild -Version "1.1.$env:appveyor_build_number.$([math]::Truncate(((Get-Date) - (Get-Date -Year 2016 -Month 1 -Day 1 -Hour 0 -Minute 0 -Second 0)).TotalDays))"'
 install:
   - nuget install secure-file -ExcludeVersion
   - secure-file\tools\secure-file -decrypt ErrorReporter.Core/ErrorReporter.Core.snk.enc -secret %snk_password%    
