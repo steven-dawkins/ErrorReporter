@@ -25,7 +25,7 @@ dotnet_csproj:
 
 
 build:
-  project: src/ErrorReporter.sln
+  project: ErrorReporter.sln
   publish_nuget: true
 
 deploy:
