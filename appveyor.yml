@@ -21,10 +21,14 @@ dotnet_csproj:
   assembly_version: '{version}'
   file_version: '{version}'
   informational_version: '{version}'
-  
+
+before_package:
+  - ps: .\ci-scripts\set-package-version-using-branch.ps1 -nuspec ErrorReporter.Core\ErrorReporter.Core.nuspec -baseVersion $env:appveyor_build_version -branchName $env:appveyor_repo_branch -releaseBranchName release
+
 build:
+  project: src/ErrorReporter.sln
   publish_nuget: true
-  verbosity: minimal
+
 deploy:
 - provider: NuGet
   api_key:
