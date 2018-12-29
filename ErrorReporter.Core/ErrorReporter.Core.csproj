@@ -3,7 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.1</TargetFramework>
     <Deterministic>false</Deterministic>
-	<Version>1.0.1</Version>
+	  <Version>1.0.1</Version>
+    <SourceLinkCreate>true</SourceLinkCreate>
   </PropertyGroup>
   
   <ItemGroup>
